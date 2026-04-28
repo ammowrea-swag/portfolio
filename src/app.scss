@@ -5,31 +5,44 @@
 @use '$lib/styles' as *;
 
 /* ---------- Google Fonts ---------- */
-@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Droid+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&family=Bitcount+Prop+Single:wght@100..900&family=Quicksand:wght@300..700&display=swap');
 
 /* ===========================================
    CSS Custom Properties
    =========================================== */
 :root {
-  /* NYCity News Service Colors */
-  --color-accent: #0033a1; /* CUNY Blue (PMS 286) */
-  --color-dark: #1a1a1a;
-  --color-text: #333333;
+  /* 90s Arcade Theme Colors */
+  --color-bg: #09070f;
+  --color-bg-elevated: #120b23;
+  --color-bg-card: #140f1d;
+  --color-cyan: #00e5ff; /* neon cyan */
+  --color-purple: #7c4dff; /* neon purple */
+  --color-yellow: #ffea00; /* pacman yellow */
+  --color-blinky: #ff0000; /* red ghost */
+  --color-pinky: #ffb8a8; /* pink ghost */
+  --color-inky: #00ffff; /* cyan ghost */
+  --color-clyde: #ffb347; /* orange ghost */
+  --color-accent: #0000ff; /* deep blue accent */
+  --color-hot-pink: #ff69b4; /* hot pink accent */
+  --color-dark: #f5f2ff;
+  --color-text: #ddd8f5;
   --color-white: #ffffff;
-  --color-light-gray: #f5f5f5;
-  --color-medium-gray: #666666;
-  --color-border: #e0e0e0;
-  --color-shadow: rgba(0, 0, 0, 0.1);
+  --color-light-gray: #2a2140;
+  --color-medium-gray: #8f87b1;
+  --color-border: #3a2f56;
+  --color-shadow: rgba(0, 0, 0, 0.45);
 
-  /* CUNY Blue Gradient Colors */
-  --color-cuny-blue-dark: #002266;
-  --color-cuny-blue-light: #0066cc;
+  /* Glow + pixel effects */
+  --glow-cyan: 0 0 10px rgba(0, 229, 255, 0.55);
+  --glow-purple: 0 0 16px rgba(124, 77, 255, 0.5);
+  --pixel-border: 3px solid var(--color-border);
 
   /* Typography */
-  --font-serif: 'PT Serif', Georgia, 'Times New Roman', Times, serif;
+  --font-serif: 'Bitcount Grid Double', 'Press Start 2P', monospace;
   --font-sans:
-    'Droid Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    'Bitcount Prop Single', 'Quicksand', -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+    sans-serif;
 
   /* Root Font Sizes */
   --font-size-root: 16px;
@@ -145,9 +158,16 @@
   padding: 0;
 }
 
+/* ===========================================
+   Global shell + retro backdrop
+   =========================================== */
 html {
   font-size: var(--font-size-root);
   scroll-behavior: smooth;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(124, 77, 255, 0.2), transparent 35%),
+    radial-gradient(circle at 80% 0%, rgba(0, 229, 255, 0.12), transparent 35%),
+    var(--color-bg);
 }
 
 body {
@@ -155,7 +175,7 @@ body {
   font-size: var(--font-size-base);
   line-height: var(--leading-normal);
   color: var(--color-text);
-  background-color: var(--color-white);
+  background-color: transparent;
 }
 /* ===========================================
    Typography
@@ -167,43 +187,28 @@ h4,
 h5,
 h6 {
   font-family: var(--font-serif);
-  font-weight: var(--font-weight-normal);
-  line-height: var(--leading-tight);
-  margin-bottom: var(--spacing-sm);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+  text-shadow: var(--glow-purple);
   color: var(--color-dark);
 }
 
 h1 {
-  font-size: var(--font-size-6xl);
-  font-weight: var(--font-weight-normal);
+  color: var(--color-yellow);
+  text-shadow: 0 0 12px rgba(255, 234, 0, 0.5);
 }
 
-h2 {
-  font-size: var(--font-size-4xl);
-}
-
-h3 {
-  font-size: var(--font-size-3xl);
-}
-
-p {
-  margin-bottom: var(--spacing-sm);
-}
-
+/* Links feel like arcade UI */
 a {
-  color: var(--color-dark);
-  text-decoration: underline;
-  transition: var(--transition-color);
+  color: var(--color-hot-pink);
+  text-decoration: none;
+  transition: var(--transition-color), var(--transition-opacity);
 }
 
 a:hover {
-  color: var(--color-accent);
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
+  color: var(--color-yellow);
+  opacity: var(--opacity-hover);
+  text-shadow: var(--glow-cyan);
 }
 
 /* ===========================================
@@ -214,10 +219,22 @@ img {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: var(--spacing-lg) var(--spacing-md);
+  background: linear-gradient(
+    180deg,
+    rgba(18, 11, 35, 0.9) 0%,
+    rgba(20, 15, 29, 0.95) 100%
+  );
+  border: var(--pixel-border);
+  box-shadow: var(--glow-purple), 0 10px 30px var(--color-shadow);
 }
 
-.container.wide {
-  max-width: var(--max-width-wide);
+/* Reusable “block icon/card” treatment */
+.retro-block {
+  background-color: var(--color-bg-card);
+  border: var(--pixel-border);
+  box-shadow: var(--glow-cyan);
+  border-radius: var(--border-radius-sm);
+  padding: var(--spacing-sm);
 }
 
 /* ===========================================
@@ -238,4 +255,43 @@ img {
   h3 {
     font-size: var(--font-size-xl);
   }
+}
+.quicksand-300 {
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.quicksand-700 {
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+
+.bitcount-prop-300{
+  font-family: "Bitcount Prop Single", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0,
+    "CRSV" 0.5,
+    "ELSH" 0,
+    "ELXP" 0;
+}
+
+
+.bitcount-grid-double-900 {
+  font-family: "Bitcount Grid Double", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0,
+    "CRSV" 0.5,
+    "ELSH" 0,
+    "ELXP" 0;
 }

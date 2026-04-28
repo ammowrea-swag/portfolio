@@ -109,7 +109,7 @@ USAGE EXAMPLE:
     gap: var(--spacing-xs);
     padding: var(--font-size-xs) var(--spacing-sm);
     border-left: var(--border-width-accent) solid var(--color-accent);
-    background-color: var(--color-light-gray);
+    background-color: var(--color-bg-card);
   }
 
   .meta-item {
@@ -136,7 +136,7 @@ USAGE EXAMPLE:
   /* Override Pubdate styles inside the meta box */
   .meta-date :global(.pubdate) {
     font-size: var(--font-size-sm);
-    color: var(--color-medium-gray);
+    color: var(--color-purple);
     text-transform: uppercase;
     letter-spacing: var(--letter-spacing-wide);
     margin: 0;

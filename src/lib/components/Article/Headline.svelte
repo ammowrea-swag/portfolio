@@ -19,18 +19,36 @@ USAGE EXAMPLE:
 {/if}
 
 <style lang="scss">
-  @use '../../styles' as *;
+  h1 {
+    margin: var(--spacing-md) 0 var(--spacing-lg);
+    line-height: var(--leading-heading);
+    color: var(--color-yellow);
+    display: inline-block;
+    transition: transform 0.2s ease, text-shadow 0.2s ease;
+    will-change: transform;
+    cursor: default;
+  
+    &:hover {
+      animation: bounce 620ms cubic-bezier(.215,.61,.355,1);
+      text-shadow: var(--glow-cyan);
+    }
+  }
 
-  .headline {
-    font-family: var(--font-serif);
-    font-size: var(--font-size-5xl);
-    font-weight: var(--font-weight-bold);
-    line-height: var(--leading-tight);
-    color: var(--color-dark);
-    margin-bottom: var(--spacing-sm);
-
-    @include tablet {
-      font-size: var(--font-size-6xl);
+  @keyframes bounce {
+    0% {
+      transform: translateY(0);
+    }
+    30% {
+      transform: translateY(-8px);
+    }
+    50% {
+      transform: translateY(0);
+    }
+    70% {
+      transform: translateY(-4px);
+    }
+    100% {
+      transform: translateY(0);
     }
   }
 </style>

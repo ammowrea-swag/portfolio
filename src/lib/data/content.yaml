@@ -1,0 +1,49 @@
+profile:
+  name: Ashley Mowreader
+  tagline: Data nerd and reporter
+  photo: /photos/amowreader.jpg
+  photoAlt: Ashley Mowreader smiles for a headshot wearing a black striped blazer and white shirt.
+  email: ammowrea@gmail.com
+  github: ammowrea-swag
+  linkedin: ashley-mowreader
+  bio: |
+    I am a data journalist and reporter based in Brooklyn. I enjoy covering business, higher education and anything involving a spreadsheet.
+
+    When I'm not in the newsroom, I'm exploring museums, eating tapas or traveling to visit friends and family across the country.
+clips:
+  - slug: visa
+    title: International Student Visas Revoked
+    image: /photos/map.jpg
+    imageAlt: An orange, gray and blue map with circles of various sizes overlayed
+    description: The Trump administration weaponzied the Student and Exchange Visitor Information System (SEVIS) to revoke the visas of international students who had been involved in any kind of police activity (including victims of crimes). I created the first publicdatabase of revoked visas and reported on the impact of the policy on students and universities across the country.
+    url: https://www.insidehighered.com/news/global/international-students-us/2025/04/07/where-students-have-had-their-visas-revoked
+    skills:
+      - Database building
+      - Data visalization
+      - Breaking news
+    body: |
+      TKTKTKTK
+
+  - slug: taxi
+    title: Taxi Scam Crackdown at JFK
+    image: /photos/taxi.jpg
+    imageAlt: A photo of a NYC taxi cab driving
+    description: Data analysis of the NYC Taxi and Limousine Commission's database shows a surge in citations against fradulent taxi cab drivers, but some claim these efforts are targeting innocent drivers. I reported on the issue and the TLC's efforts to crack down on the problem.
+    url: https://ammowrea-swag.github.io/infodesign/
+    skills:
+      - Data analysis
+      - Accountability reporting
+    body: |
+      TKTKTKTK
+
+  - slug: airfreight
+    title: Making space for women in airfreight
+    image: /photos/airfreight.jpg
+    imageAlt: A photo of air cargo being loaded onto a plane
+    description: The air cargo industry remains dominated by men, but more advocates are pushing to give women a larger platform in the industry. I spoke with experts and advocates about the challenges.
+    url: https://cargofacts.com/features/below-capacity-making-space-for-women-in-airfreight/
+    skills:
+      - Advocacy
+      - Feature writing
+    body: |
+      TKTKTKTK

@@ -32,7 +32,7 @@ and an icon snippet.
     color: var(--color-text);
     font-size: var(--font-size-sm);
     border: var(--border-width-thin) solid var(--color-border);
-    background: var(--color-white);
+    background: var(--color-hot-pink);
     padding: var(--spacing-xxs) var(--spacing-xs);
     transition: var(--transition-color);
 

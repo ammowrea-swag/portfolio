@@ -116,9 +116,27 @@ Next, I'm exploring machine learning tools for document analysis."
     letter-spacing: var(--letter-spacing-tight);
     margin-bottom: var(--spacing-xxs);
 
+    display: inline-block;
+    transition: transform 0.2s ease, text-shadow 0.2s ease;
+    will-change: transform;
+    cursor: default;
+
+    &:hover {
+      animation: bounce 620ms cubic-bezier(.215,.61,.355,1);
+      text-shadow: var(--glow-cyan);
+    }
+
     @include mobile {
       font-size: var(--font-size-display);
     }
+  }
+
+  @keyframes bounce {
+    0% { transform: translateY(0); }
+    30% { transform: translateY(-8px); }
+    50% { transform: translateY(0); }
+    70% { transform: translateY(-4px); }
+    100% { transform: translateY(0); }
   }
 
   .tagline {

@@ -44,13 +44,34 @@ Card.svelte — A card container with optional image, link, and footer actions.
 
 <style lang="scss">
   .card {
-    border: 1px solid var(--color-border, #ddd);
-    border-radius: 4px;
-    background: var(--color-white, #fff);
+    position: relative;
+    border: var(--pixel-border);
+    border-radius: var(--border-radius-sm);
+    background: linear-gradient(
+      180deg,
+      rgba(20, 15, 29, 0.98) 0%,
+      rgba(18, 11, 35, 0.96) 100%
+    );
     overflow: hidden;
     display: flex;
     flex-direction: column;
     height: 100%;
+    box-shadow:
+      var(--glow-purple),
+      0 10px 30px var(--color-shadow);
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease,
+      border-color 0.2s ease;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      pointer-events: none;
+      box-shadow: inset 0 0 0 1px rgba(0, 229, 255, 0.08);
+    }
   }
 
   .card-link {
@@ -59,14 +80,26 @@ Card.svelte — A card container with optional image, link, and footer actions.
     height: 100%;
     color: inherit;
     text-decoration: none;
-    transition: box-shadow 0.2s ease;
 
     &:hover {
-      box-shadow: 0 2px 8px var(--color-shadow, rgba(0, 0, 0, 0.12));
+      transform: translateY(-2px);
+      box-shadow:
+        var(--glow-cyan),
+        0 12px 32px var(--color-shadow);
+    }
+
+    &:focus-visible {
+      outline: none;
+      box-shadow:
+        var(--glow-cyan),
+        0 0 0 2px rgba(255, 234, 0, 0.5),
+        0 12px 32px var(--color-shadow);
     }
   }
 
   .card-image {
+    border-bottom: 1px solid rgba(0, 229, 255, 0.12);
+
     img {
       display: block;
       width: 100%;
@@ -82,20 +115,21 @@ Card.svelte — A card container with optional image, link, and footer actions.
       font-size: 1.1rem;
       margin: 0 0 0.5rem;
       line-height: 1.3;
+      color: var(--color-clyde, #ffb347);
     }
 
     :global(p) {
       font-size: 0.9rem;
       margin: 0;
       line-height: 1.5;
-      color: var(--color-text-secondary, #555);
+      color: var(--color-white, #fff);
     }
   }
 
   .card-footer {
-    border-top: 1px solid var(--color-border, #ddd);
+    border-top: 1px solid rgba(0, 229, 255, 0.12);
     padding: var(--spacing-sm, 0.75rem) var(--spacing-md, 1rem);
-    background: var(--color-light-gray, #f5f5f5);
+    background: rgba(42, 33, 64, 0.7);
     margin-top: auto;
   }
 </style>

@@ -89,6 +89,15 @@ USAGE EXAMPLE:
     width: 100%;
     height: auto;
     display: block;
+    border: 3px solid var(--color-inky);
+    border-radius: var(--border-radius-sm);
+    box-shadow: var(--glow-cyan), 0 10px 30px var(--color-shadow);
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--glow-cyan), var(--glow-purple), 0 16px 40px var(--color-shadow);
+    }
   }
 
   .caption-container {

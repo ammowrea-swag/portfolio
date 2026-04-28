@@ -34,21 +34,21 @@ USAGE EXAMPLE:
 </div>
 
 <style lang="scss">
+  @use '$lib/styles' as *;
+
   .tag-list {
-    margin: var(--spacing-sm) 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
   }
 
   .tag-list-label {
-    margin: 0 0 var(--spacing-xs) 0;
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+    margin: 0;
   }
 
   .tag-list-items {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--spacing-xs);
+    gap: var(--spacing-sm);
   }
 </style>

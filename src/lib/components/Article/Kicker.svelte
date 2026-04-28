@@ -24,22 +24,26 @@ USAGE EXAMPLE:
 {/if}
 
 <style lang="scss">
+  @use '$lib/styles' as *;
+
   .kicker {
-    font-family: var(--font-sans);
-    font-size: var(--font-size-sm);
-    font-weight: var(--font-weight-bold);
-    color: var(--color-accent);
+    display: inline-block;
+    font-family: var(--font-serif);
+    font-size: var(--font-size-xs);
     text-transform: uppercase;
-    letter-spacing: var(--letter-spacing-wider);
-    margin: 0 0 var(--spacing-xxs);
+    letter-spacing: var(--letter-spacing-wide);
+    color: var(--color-accent);
+    margin-bottom: var(--spacing-sm);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border: var(--pixel-border);
+    background-color: rgba(124, 77, 255, 0.1);
+    border-radius: var(--border-radius-sm);
+    transition: all 0.2s ease;
 
-    a {
-      color: inherit;
-      text-decoration: none;
-
-      &:hover {
-        text-decoration: underline;
-      }
+    &:hover {
+      background-color: rgba(124, 77, 255, 0.2);
+      box-shadow: var(--glow-purple);
+      transform: scale(1.02);
     }
   }
 </style>

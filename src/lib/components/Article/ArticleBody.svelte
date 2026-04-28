@@ -75,7 +75,7 @@ USAGE EXAMPLE:
 
   /* Links within article body */
   .article-body :global(a) {
-    color: var(--color-dark);
+    color: var(--color-purple);
     text-decoration: underline;
     text-underline-offset: 2px;
   }
@@ -105,7 +105,7 @@ USAGE EXAMPLE:
 
   /* Block quotes - NYCity style with blue left border */
   .article-body :global(blockquote) {
-    border-left: var(--border-width-accent) solid var(--color-accent);
+    border-left: var(--border-width-accent) solid var(--color-purple);
     margin: var(--spacing-lg) 0;
     padding: var(--spacing-sm) var(--spacing-sm);
     font-style: italic;
@@ -140,9 +140,9 @@ USAGE EXAMPLE:
     /* Animated gradient matching the site header */
     background: linear-gradient(
       90deg,
-      var(--color-cuny-blue-dark) 0%,
-      var(--color-accent) 50%,
-      var(--color-cuny-blue-light) 100%
+      var(--color-accent) 0%,
+      var(--color-inky) 50%,
+      var(--color-cyan) 100%
     );
     background-size: 200% 100%;
     -webkit-background-clip: text;
