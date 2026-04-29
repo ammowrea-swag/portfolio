@@ -22,7 +22,7 @@ clips:
       - Data visalization
       - Breaking news
     body: |
-      TKTKTKTK
+      This was my first attempt at a real-time database, compiling various news reports and disclosures of students with SEVIS revocations in April 2025. The map, which is a shitty Flourish construction, was the first public-facing visualization of this data, which was replicated by much more established newsroooms (with better tech tools probably). A challenging project that required the newsroom to re-evaluate our processes for data projcets and was our most read story of the year.
 
   - slug: taxi
     title: Taxi Scam Crackdown at JFK
@@ -34,7 +34,7 @@ clips:
       - Data analysis
       - Accountability reporting
     body: |
-      TKTKTKTK
+      A piece I'm currently working on, looking at the Taxi and Limousine Commission's efforts to reduce the number of illegal cabs operating at JFK and LGA airports. 
 
   - slug: airfreight
     title: Making space for women in airfreight
@@ -46,4 +46,4 @@ clips:
       - Advocacy
       - Feature writing
     body: |
-      TKTKTKTK
+      A feature I wrote for Air Cargo World's (now Cargo Facts) November 2022 magazine about women in the airfreight industry. Aviation, despite having many women working in the field, is still dominated by men at the highest levels of organizations and in the conference circut. I wanted to explore the barriers to women achieving the same success and opportunities to engage more young people across the board. 
